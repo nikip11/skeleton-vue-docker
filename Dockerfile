@@ -1,10 +1,9 @@
-FROM node:10.15.3-alpine
+FROM node:18-alpine
 
-RUN set -xe \
-    && apk add --update
-
-
-RUN npm install -g @vue/cli
-RUN npm install -g yarn
+RUN npm install -g pnpm
 
 WORKDIR /app
+
+EXPOSE 3000
+
+CMD ["pnpm", "run", "dev"]

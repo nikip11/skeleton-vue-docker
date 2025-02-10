@@ -1,14 +1,12 @@
-version: '3.8'
 services:
-  web:
+  vue-app:
     build: .
     tty: true
     container_name: app
     volumes:
       - ./app:/app
     ports:
-      - 8080:8080
-    working_dir: /app
-    command: yarn serve
-    expose:
-      - 8080
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
+
